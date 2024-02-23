@@ -34,7 +34,7 @@ var longestPalindrome = function(s) {
  
     for(let len = 1; len <= n; len++) {
         for (let i = 0; i <= n - len;i++) {
-            let j = 1 + len - 1;
+            let j = i + len - 1;
  
             if (len == 1){
                 dp[i][j] = true;
