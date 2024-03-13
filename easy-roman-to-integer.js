@@ -85,3 +85,10 @@
     return total;
 };
 
+// In this code, s is a string representing a Roman numeral, and i is an index into that string. s[i] is the character at position i in the string s.
+
+// romanMap is an object (or possibly a Map) where the keys are Roman numerals (I, V, X, L, C, D, M) and the values are their corresponding integer values (1, 5, 10, 50, 100, 500, 1000).
+
+// The line if(romanMap[s[i]] < romanMap[s[i + 1]]) checks if the current Roman numeral is less than the next one. This is important because in Roman numerals, if a smaller number appears before a larger one, it is subtracted. For example, in the Roman numeral IX, I is before X and since I is less than X, we subtract I from X to get 9.
+
+// So, if the current Roman numeral is less than the next one, total -= romanMap[s[i]] subtracts the value of the current Roman numeral from the total.
