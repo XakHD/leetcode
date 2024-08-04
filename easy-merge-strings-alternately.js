@@ -48,27 +48,10 @@
  * @return {string}
  */
 var mergeAlternately = function(word1, word2) {
-    let merged = '';
-    let i = 0, j = 0;
-    const length1 = word1.length;
-    const length2 = word2.length;
-
-    while(i < length1 && j < length2) {
-        merged += word1[i];
-        merged += word2[j];
-        i++;
-        j++;
+    let result = '';
+    for (let i = 0; i < Math.max(word1.length, word2.length); i++) {
+      if (i < word1.length) result += word1[i];
+      if (i < word2.length) result += word2[i];
     }
-
-    while (i < length1) {
-        merged += word1[i];
-        i++;
-    }
-
-    while (j < length2) {
-        merged += word2[j];
-        j++;
-    }
-
-    return merged;
-};
+    return result;
+  };
