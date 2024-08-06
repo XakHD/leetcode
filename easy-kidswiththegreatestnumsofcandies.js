@@ -43,18 +43,12 @@
 
 // My solution
 var kidsWithCandies = function(candies, extraCandies) {
-    const maxCandies = Math.max(...candies);  // Find the maximum number of candies any kid has
-    const result = [];
-
-    for (const candy of candies) {
-        // Check if the current kid's candies plus extraCandies would be greater than or equal to maxCandies
-        result.push((candy + extraCandies) >= maxCandies);
-    }
-
+    let result = new Array(candies.length).fill(false);
+    let max = Math.max(...candies);
+    for (let i = 0; i < candies.length; i++) {
+        if (candies[i] + extraCandies >= max) {
+            result[i] = true;
+        }
+    } 
     return result;
 };
-
-// Example usage:
-console.log(kidsWithCandies([2,3,5,1,3], 3)); // Output: [true, true, true, false, true]
-console.log(kidsWithCandies([4,2,1,1,2], 1)); // Output: [true, false, false, false, false]
-console.log(kidsWithCandies([12,1,12], 10));  // Output: [true, false, true]
