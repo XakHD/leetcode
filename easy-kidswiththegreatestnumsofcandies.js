@@ -41,14 +41,26 @@
 // 1 <= extraCandies <= 50
 
 
-// My solution
-var kidsWithCandies = function(candies, extraCandies) {
+/**
+ * @param {number[]} candies
+ * @param {number} extraCandies
+ * @return {boolean[]}
+ */
+
+function kidsWithCandies(candies, extraCandies) {
+    //First we create a result array of the same length as 'candies' and fill it with 'false' values. This array will later be updated with 'true' values where applicable
     let result = new Array(candies.length).fill(false);
+    //next we need to determine the current maximum number of candies any kid has. WE can do this using the 'Math.max()' function combined with the spread operator to spread out the elements of the 'candies' array as arguments to 'Math.max()'
     let max = Math.max(...candies);
-    for (let i = 0; i < candies.length; i++) {
-        if (candies[i] + extraCandies >= max) {
-            result[i] = true;
-        }
-    } 
-    return result;
-};
+   
+   // we then loop through each element in the 'candies' array, add 'extracandies' to it, and compare it to 'max'. If the result is greater than or equal to 'max', we set the corresponding element in the result array to 'true'.
+   for(let i = 0; i < candies.length; i++) {
+       if(candies[i] + extraCandies >= max) {
+           result[i] = true;
+       }
+     }
+     //finally we return the result array, which now contains 'true' or 'false' for each element in the 'candies' array based on whether adding 'extraCandies' can make it the maximum
+     return result;
+   };
+   
+   
