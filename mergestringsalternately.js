@@ -48,20 +48,24 @@
  * @return {string}
  */
  
- //we define a function named mergeAlternately that takes two parameters, 'word1' and 'word2'. These are the two strings we want to merge alternately
+ //we define a function named mergeAlternately that takes two parameters, 
+ //'word1' and 'word2'. These are the two strings we want to merge alternately
  var mergeAlternately = function(word1, word2) {
 
     //we initialize an empty string 'result' that will store the merged result of 'word1' and 'word2'
     let result = '';
     
     //Iterate with a single loop, use a 'for' loop to iterate through the strings
-    //Math.max function, the loop runs up to the length of the longer strings ('Math.max(word1.length, word2.length)'), this ensures we check every character in both strings.
+    //Math.max function, the loop runs up to the length of the longer strings 
+    //('Math.max(word1.length, word2.length)'), this ensures we check every character in both strings.
     for(i = 0; i < Math.max(word1.length, word2.length); i++) {
     
-     //add characters alternately, the first condition will check if the current index 'i' is within the bounds of 'word1'. If so, it appends the character at position 'i' in 'word1' to 'result'
+     //add characters alternately, the first condition will check if the current 
+     //index 'i' is within the bounds of 'word1'. If so, it appends the character at position 'i' in 'word1' to 'result'
      if( i < word1.length)result += word1[i];
     
-      //the second condition checks if the current index 'i' is within the bounds of 'word2'. if so, it appends the character at position 'i' in 'word2' to 'result'
+      //the second condition checks if the current index 'i' is within the bounds of 'word2'. 
+      //if so, it appends the character at position 'i' in 'word2' to 'result'
       // By appending from both strings in each iteration, we naturally alternate between them  
      if(i < word2.length)result += word2[i];
     
@@ -69,12 +73,17 @@
       }
     return result;
     }
-    //Math.max is a static method that returns the largest of the numbers given as input parameters, or - infinity if there are no parameters
-    //The for statement creates a loop that consists of three optional expressions, enclosed in parentheses and separated by semicolons, followed by a statement (usually a block statement) to be executed in the loop
+    //Math.max is a static method that returns the largest of the numbers given as input parameters,
+    // or - infinity if there are no parameters
+    //The for statement creates a loop that consists of three optional expressions, 
+    //enclosed in parentheses and separated by semicolons, followed by a statement (usually a block statement
+    //) to be executed in the loop
     //example how for loop looks 
     //for (let i = 0; i < 9; i++) {
     //str = str + i;
     //}
     
-    //Efficiency: Using a single loop to handle both strings reduces the complexity of the code and minimizes the number of iterations needed.
-    //Compact Logic: The condition checks inside the loop allow for direct handling of different lengths without additional logic outside the loop, streamlining the merging process.
+    //Efficiency: Using a single loop to handle both strings reduces the complexity of the code
+    // and minimizes the number of iterations needed.
+    //Compact Logic: The condition checks inside the loop allow for direct handling of different lengths 
+    //without additional logic outside the loop, streamlining the merging process.
