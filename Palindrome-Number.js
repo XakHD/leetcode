@@ -46,3 +46,5 @@ var isPalindrome = function(x) {
     }
     return(reversedStr === xStr)
 }
+
+//update
