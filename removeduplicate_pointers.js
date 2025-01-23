@@ -1,9 +1,3 @@
-// 26. Remove Duplicates from Sorted Array
-// Solved
-// Easy
-// Topics
-// Companies
-// Hint
 // Given an integer array nums sorted in non-decreasing order, remove the duplicates in-place such that each unique element appears only once. The relative order of the elements should be kept the same. Then return the number of unique elements in nums.
 
 // Consider the number of unique elements of nums to be k, to get accepted, you need to do the following things:
@@ -51,25 +45,14 @@
  * @param {number[]} nums
  * @return {number}
  */
-//sorted set explanation
-//sort acsending order with array nums
-//remove the duplicates in place
-//each unique value should only appear once
-//relative order of the elements should be kept same
-//return the number of unique elements in nums
- var removeDuplicates = function(nums) {
-    //new Set(nums): convert the array nums into a Set; which removes duplicates since set 
-    //only allows unique values
-    //.sort((a,b) => a - b) ensures that the unique elements are sorted.(in this
-    //case the input is already sorted, so sorting isnt necessary
-    //this creates an array unique that contains all unique elements in sorted order
-    const unique = Array.from(new Set(nums)).sort((a,b) => a - b);
-
-    //the for loop iterates through the unique array and overwrites the first k elements of nums with the 
-    //unique values
-    for(let i = 0; i < unique.length; i++) {
-        nums[i] = unique[i];
-    }
-    //since the unique array contains all unique elements, its length represents the number of unique elements(K)
-    return unique.length
- }
+var removeDuplicates = function(nums) {
+    let n = nums.length, l = 0, r = 0;
+        while (r < n) {
+            nums[l] = nums[r];
+            while (r < n && nums[r] === nums[l]) {
+                r++;
+            }
+            l++;
+        }
+        return l;
+    };
