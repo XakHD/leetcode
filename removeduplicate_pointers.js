@@ -46,13 +46,13 @@
  * @return {number}
  */
 var removeDuplicates = function(nums) {
-    let n = nums.length, l = 0, r = 0;
-        while (r < n) {
-            nums[l] = nums[r];
-            while (r < n && nums[r] === nums[l]) {
-                r++;
-            }
-            l++;
+  let n = nums.length, l = 0, r = 0;
+    while (r < n) {
+        nums[l] = nums[r];
+        while (r < n && nums[r] === nums[l]) {
+            r++;
         }
-        return l;
+        l++;
+    }
+    return l;
     };
